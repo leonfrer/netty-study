@@ -1,4 +1,4 @@
-package com.github;
+package com.github.startup;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,6 +8,9 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class CustomizeServer {
 
+	/**
+	 * CustomizeServer#main() -> CustomizeServerInitializer -> (CustomizeServerHandler + HttpServerCodec)
+	 */
 	public static void main(String[] args) throws InterruptedException {
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workerGroup = new NioEventLoopGroup();

@@ -1,4 +1,4 @@
-package com.github;
+package com.github.startup;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
