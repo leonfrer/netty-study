@@ -5,3 +5,4 @@
 through package >>
 
 * startup
+* socket
