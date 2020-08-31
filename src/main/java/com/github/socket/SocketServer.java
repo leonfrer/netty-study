@@ -14,7 +14,8 @@ public class SocketServer {
 
 		try {
 			ServerBootstrap serverBootstrap = new ServerBootstrap();
-			serverBootstrap.group(bossGroup, employeeGroup).channel(NioServerSocketChannel.class).childHandler(null);
+			serverBootstrap.group(bossGroup, employeeGroup).channel(NioServerSocketChannel.class)
+					.childHandler(new SocketServerInitializer());
 
 			ChannelFuture channelFuture = serverBootstrap.bind(8889).sync();
 			channelFuture.channel().closeFuture().sync();
