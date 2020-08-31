@@ -23,7 +23,6 @@ public class CustomizeServer {
 			ChannelFuture channelFuture = serverBootstrap.bind(8888).sync();
 			channelFuture.channel().closeFuture().sync();
 		} finally {
-			System.out.println(111);
 			bossGroup.shutdownGracefully();
 			workerGroup.shutdownGracefully();
 		}
