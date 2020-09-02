@@ -6,3 +6,4 @@ through package >>
 
 * startup
 * socket
+* chat
