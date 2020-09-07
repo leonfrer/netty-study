@@ -18,7 +18,7 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
 			if (ch != channel) {
 				ch.writeAndFlush(channel.remoteAddress() + "'s message: " + msg + "\n");
 			} else {
-				ch.write("you: " + msg);
+				ch.writeAndFlush("you: " + msg + "\n");
 			}
 		}
 	}
@@ -26,14 +26,14 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
 	@Override
 	public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
 		Channel channel = ctx.channel();
-		channelGroup.writeAndFlush("server - " + channel.remoteAddress() + " attended");
+		channelGroup.writeAndFlush("server - " + channel.remoteAddress() + " attended\n");
 		channelGroup.add(channel);
 	}
 
 	@Override
 	public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
 		Channel channel = ctx.channel();
-		channelGroup.writeAndFlush("server - " + channel.remoteAddress() + " removed");
+		channelGroup.writeAndFlush("server - " + channel.remoteAddress() + " removed\n");
 	}
 
 	@Override
