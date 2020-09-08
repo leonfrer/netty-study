@@ -7,3 +7,4 @@ through package >>
 * startup
 * socket
 * chat
+* heartbeat
