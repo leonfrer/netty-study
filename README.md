@@ -8,3 +8,4 @@ through package >>
 * socket
 * chat
 * heartbeat
+* websocket
