@@ -9,7 +9,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import java.net.InetSocketAddress;
 
 /**
- * when client out of network directly, server cannot 'feel' it
+ * when disconnect network directly, server cannot 'feel' it
  * cause this server is lack of heartbeat
  */
 public class WebsocketServer {
