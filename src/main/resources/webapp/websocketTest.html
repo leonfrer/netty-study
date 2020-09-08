@@ -15,7 +15,7 @@
 
     <textarea id="responseText" style="width: 400px; height: 300px"></textarea>
 
-    <input type="button" onclick="javascript: document.getElementById('responseText').value=''" value="clear content">
+    <input type="button" onclick="document.getElementById('responseText').value=''" value="clear content">
 </form>
 
 <script type="text/javascript">
@@ -26,24 +26,24 @@
 
         ws.onmessage = function (event) {
             let ta = document.getElementById('responseText');
-            ta.value = ta.value + '\n' + event.data;
+            ta.value += event.data + '\n';
         };
 
         ws.onopen = function (event) {
             let ta = document.getElementById('responseText');
-            ta.value = 'connected to server';
+            ta.value = 'connected to server\n';
         };
 
         ws.onclose = function (event) {
             let ta = document.getElementById('responseText');
-            ta.value += '\ndisconnected from server';
+            ta.value += 'disconnected from server\n';
         }
     } else {
-        alert('websocket not supported')
+        alert('websocket not supported');
     }
 
     function send(message) {
-        if (websocketSupport && ws) {
+        if (websocketSupport) {
             ws.send(message);
         }
     }
