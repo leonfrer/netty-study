@@ -9,3 +9,4 @@ through package >>
 * chat
 * heartbeat
 * websocket
+* protobuf
